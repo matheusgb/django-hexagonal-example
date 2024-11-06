@@ -1,28 +1,26 @@
-from abc import ABC, abstractmethod
 from typing import List
 from saude.dtos.input.professional_input import CreateProfessionalInputDTO, UpdateProfessionalInputDTO
 from saude.dtos.output.professional_output import ProfessionalOutputDTO
+from saude.application.i_professional_service import IProfessionalService
+from saude.ports.outbound.i_professional_repository import IProfessionalRepository
 from uuid import UUID
 
 
-class IProfessionalRepository(ABC):
+class ProfessionalService(IProfessionalService):
+    def __init__(self, repository: IProfessionalRepository):
+        self.repository = repository
 
-    @abstractmethod
     def create_professional(self, professional: CreateProfessionalInputDTO) -> ProfessionalOutputDTO:
         pass
 
-    @abstractmethod
     def update_professional(self, professional_id: UUID, professional: UpdateProfessionalInputDTO) -> ProfessionalOutputDTO:
         pass
 
-    @abstractmethod
     def list_professional(self, professional_id: UUID) -> ProfessionalOutputDTO:
         pass
 
-    @abstractmethod
     def list_all_professionals(self) -> List[ProfessionalOutputDTO]:
         pass
 
-    @abstractmethod
     def delete_professional(self, professional_id: UUID) -> ProfessionalOutputDTO:
         pass

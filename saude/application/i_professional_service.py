@@ -5,7 +5,7 @@ from saude.dtos.output.professional_output import ProfessionalOutputDTO
 from uuid import UUID
 
 
-class IProfessionalRepository(ABC):
+class IProfessionalService(ABC):
 
     @abstractmethod
     def create_professional(self, professional: CreateProfessionalInputDTO) -> ProfessionalOutputDTO:

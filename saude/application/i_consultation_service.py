@@ -5,7 +5,7 @@ from saude.dtos.output.consultation_output import ConsultationOutputDTO
 from uuid import UUID
 
 
-class IConsultationRepository(ABC):
+class IConsultationService(ABC):
 
     @abstractmethod
     def create_consultation(self, consultation: CreateConsultationInputDTO) -> ConsultationOutputDTO:
