@@ -1,21 +1,21 @@
 from abc import ABC, abstractmethod
 from typing import List
-from saude.dtos.input.consultation_input import ConsultationInputDTO
+from saude.dtos.input.consultation_input import CreateConsultationInputDTO, UpdateConsultationInputDTO
 from saude.dtos.output.consultation_output import ConsultationOutputDTO
 
 
 class IConsultationRepository(ABC):
 
     @abstractmethod
-    def create_consultation(self, consultation: ConsultationInputDTO) -> ConsultationOutputDTO:
+    def create_consultation(self, consultation: CreateConsultationInputDTO) -> ConsultationOutputDTO:
         pass
 
     @abstractmethod
-    def update_consultation(self, consultation: ConsultationInputDTO) -> ConsultationOutputDTO:
+    def update_consultation(self, consultation: UpdateConsultationInputDTO) -> ConsultationOutputDTO:
         pass
 
     @abstractmethod
-    def list_consultation(self, consultation: ConsultationInputDTO) -> ConsultationOutputDTO:
+    def list_consultation(self) -> ConsultationOutputDTO:
         pass
 
     @abstractmethod
@@ -23,5 +23,5 @@ class IConsultationRepository(ABC):
         pass
 
     @abstractmethod
-    def delete_consultation(self, consultation: ConsultationInputDTO) -> ConsultationOutputDTO:
+    def delete_consultation(self) -> ConsultationOutputDTO:
         pass
