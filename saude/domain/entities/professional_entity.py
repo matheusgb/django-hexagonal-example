@@ -32,16 +32,16 @@ class ProfessionalEntity(models.Model):
         unique=True,
         blank=False,
     )
-    created_at = models.TimeField(
+    created_at = models.DateTimeField(
         auto_now_add=True
     )
-    updated_at = models.TimeField(
+    updated_at = models.DateTimeField(
         auto_now_add=True
     )
     deleted = models.BooleanField(
         default=False
     )
-    deleted_at = models.TimeField(
+    deleted_at = models.DateTimeField(
         null=True,
         blank=True
     )
