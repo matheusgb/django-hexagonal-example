@@ -11,7 +11,7 @@ class ConsultationEntity(models.Model):
         editable=False,
         unique=True
     )
-    scheduled_date = models.DateField()
+    scheduled_date = models.DateTimeField()
     professional = models.ForeignKey(
         ProfessionalEntity,
         on_delete=models.CASCADE,
