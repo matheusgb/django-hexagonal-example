@@ -14,11 +14,13 @@ class ProfessionalEntity(models.Model):
     name = models.CharField(max_length=100)
     social_name = models.CharField(
         max_length=100,
-        blank=True
+        blank=True,
+        null=True
     )
     profession = models.CharField(
         max_length=100,
-        blank=True
+        blank=True,
+        null=True
     )
     address = models.TextField(max_length=400)
     phone_number = models.CharField(
@@ -26,6 +28,7 @@ class ProfessionalEntity(models.Model):
         validators=[RegexValidator(
             r'^\d+$', 'Somente números são permitidos.')],
         blank=True,
+        null=True
     )
     email = models.EmailField(
         max_length=254,
@@ -36,7 +39,7 @@ class ProfessionalEntity(models.Model):
         auto_now_add=True
     )
     updated_at = models.DateTimeField(
-        auto_now_add=True
+        auto_now=True
     )
     deleted = models.BooleanField(
         default=False

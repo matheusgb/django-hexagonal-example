@@ -1,9 +1,10 @@
 from typing import Optional
 from uuid import UUID
 import datetime
+from saude.domain.entities.professional_entity import ProfessionalEntity
 
 
-class ProfessionalOutputDTO():
+class ProfessionalOutputDTO(ProfessionalEntity):
     id: UUID
     name: str
     social_name: Optional[str] = None

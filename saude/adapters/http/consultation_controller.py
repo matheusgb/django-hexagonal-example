@@ -8,19 +8,19 @@ from saude.dtos.output.consultation_serializer import ConsultationOutputSerializ
 
 class ConsultationController(viewsets.ViewSet):
     def __init__(self):
-        self.repository = ConsultationService()
+        self.service = ConsultationService()
 
     def create_consultation(self, request):
         pass
 
-    def update_consultation(self, request):
+    def update_consultation(self, request, id=None):
         pass
 
-    def list_consultation(self, request):
+    def list_consultation(self, request, id=None):
         pass
 
     def list_all_consultations(self, request):
         pass
 
-    def delete_consultation(self, request):
+    def delete_consultation(self, request, id=None):
         pass

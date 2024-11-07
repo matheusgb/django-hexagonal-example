@@ -8,7 +8,7 @@ class CreateProfessionalInputDTO(BaseModel):
     profession: Optional[str] = Field(None, max_length=100)
     address: str = Field(..., max_length=100)
     phone_number: Optional[str] = Field(
-        None, regex=r'^\+?(\d{1,4})?[\s.-]?(\(?\d{1,3}\)?[\s.-]?)?[\d\s.-]{3,}$')
+        None, pattern=r'^\+?(\d{1,4})?[\s.-]?(\(?\d{1,3}\)?[\s.-]?)?[\d\s.-]{3,}$')
     email: EmailStr
 
 
@@ -18,5 +18,5 @@ class UpdateProfessionalInputDTO(BaseModel):
     profession: Optional[str] = Field(None, max_length=100)
     address: Optional[str] = Field(None, max_length=100)
     phone_number: Optional[str] = Field(
-        None, regex=r'^\+?(\d{1,4})?[\s.-]?(\(?\d{1,3}\)?[\s.-]?)?[\d\s.-]{3,}$')
+        None, pattern=r'^\+?(\d{1,4})?[\s.-]?(\(?\d{1,3}\)?[\s.-]?)?[\d\s.-]{3,}$')
     email: Optional[EmailStr] = None

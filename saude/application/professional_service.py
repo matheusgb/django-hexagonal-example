@@ -11,7 +11,9 @@ class ProfessionalService(IProfessionalService):
         self.repository = repository
 
     def create_professional(self, professional: CreateProfessionalInputDTO) -> ProfessionalOutputDTO:
-        pass
+        created_professional = self.repository.create_professional(
+            professional)
+        return created_professional
 
     def update_professional(self, professional_id: UUID, professional: UpdateProfessionalInputDTO) -> ProfessionalOutputDTO:
         pass
