@@ -42,7 +42,24 @@ class ProfessionalRepository(IProfessionalRepository):
         pass
 
     def list_all_professionals(self) -> List[ProfessionalOutputDTO]:
-        pass
+        professionals_entity = ProfessionalEntity.objects.all()
+
+        professionals = [
+            ProfessionalOutputDTO(
+                id=p.id,
+                name=p.name,
+                social_name=p.social_name,
+                profession=p.profession,
+                address=p.address,
+                phone_number=p.phone_number,
+                email=p.email,
+                created_at=p.created_at,
+                updated_at=p.updated_at
+            )
+            for p in professionals_entity
+        ]
+
+        return professionals
 
     def delete_professional(self, professional_id: UUID) -> ProfessionalOutputDTO:
         pass

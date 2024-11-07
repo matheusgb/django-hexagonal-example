@@ -28,11 +28,15 @@ class ProfessionalController(viewsets.ViewSet):
     def update_professional(self, request, id=None):
         pass
 
+    @action(detail=False, methods=['get'])
     def list_professional(self, request, id=None):
         pass
 
+    @action(detail=False, methods=['get'])
     def list_all_professionals(self, request):
-        pass
+        professionals = self.service.list_all_professionals()
+        serializer = ProfessionalOutputSerializer(professionals, many=True)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
     def delete_professional(self, request, id=None):
         pass

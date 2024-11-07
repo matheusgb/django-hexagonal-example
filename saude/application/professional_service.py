@@ -22,7 +22,8 @@ class ProfessionalService(IProfessionalService):
         pass
 
     def list_all_professionals(self) -> List[ProfessionalOutputDTO]:
-        pass
+        professionals = self.repository.list_all_professionals()
+        return professionals
 
     def delete_professional(self, professional_id: UUID) -> ProfessionalOutputDTO:
         pass
